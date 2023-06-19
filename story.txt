@@ -1,0 +1,39 @@
+This is the story:
+
+You are a grunt working for an intperplanetary materials company
+
+You log into your ROVER, which although you just graduated from your academy you have 
+pretty much no idea how to use.
+
+You are told you are on a planet looking for suitable drilling sites, 
+and that all reachable areas have been mapped and are on a grid, 
+the red square indicated your current location
+
+You are told that there may or may not be life on the planet,
+but if there is, it is definitely not at all intelligent
+You are told to NOT INTERACT WITH ANY LIVING THING and just ignore them 
+
+You are told to find the x drillign sites, and retunr to your rover's landing afterwards
+
+You are then connected to your rover, and all information received is given through it
+ROVER: Something is happening here
+
+you issue commands to move and do things
+
+you encounter life forms that do not seem intellgient, and can be scanned to produce 
+very poor quality images
+
+some will stop you from testing drilling sites
+
+at some point your signal is intercepted and links open on your computer
+they offer cryptic messages and suggest that the life there is more intelligent than you belive
+they offer reasons for you not to believe what your rover is telling you
+they give you secret commands to tell your rover that confirm that they are intelligent
+
+eventually your a given a picture of your rover, and you learn that your rover is massive
+and towers over everythign else on the planet
+
+
+
+
+

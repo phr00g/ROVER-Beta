@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>⟔⟝⟣⟔⟡ ⟜⟔⟢⟢⟐⟖⟔ ⟣⟞ ⟓⟔⟒⟞⟓⟔</title>
+    <script>
+        function decodeInput() {
+            var userInput = document.getElementById("userInput").value;
+            var decodedMessage = "";
+
+            // Define the decoding logic in JavaScript
+            var decodingDict = {
+                '⟐': 'a', '⟑': 'b', '⟒': 'c', '⟓': 'd', '⟔': 'e', '⟕': 'f', '⟖': 'g', '⟗': 'h', '⟘': 'i', '⟙': 'j', '⟚': 'k', '⟛': 'l', '⟜': 'm', '⟝': 'n', '⟞': 'o', '⟟': 'p', '⟠': 'q', '⟡': 'r', '⟢': 's', '⟣': 't', '⟤': 'u', '⟥': 'v', '⟦': 'w', '⟧': 'x', '⟨': 'y', '⟩': 'z', ' ': ' ' , '?':'?', '.':'.' , ',':','
+            };
+
+            for (var i = 0; i < userInput.length; i++) {
+                var char = userInput[i];
+                if (char in decodingDict) {
+                    decodedMessage += decodingDict[char];
+                } else {
+                    decodedMessage += char;
+                }
+            }
+
+            document.getElementById("decodedMessage").textContent = decodedMessage;
+        }
+    </script>
+</head>
+<body>
+    <h1>⟔⟝⟣⟔⟡ ⟜⟔⟢⟢⟐⟖⟔ ⟣⟞ ⟓⟔⟒⟞⟓⟔</h1>
+    <input type="text" id="userInput" placeholder="⟔⟝⟣⟔⟡ ⟜⟔⟢⟢⟐⟖⟔ ⟣⟞ ⟓⟔⟒⟞⟓⟔" />
+    <button onclick="decodeInput()">⟓⟔⟒⟞⟓⟔</button>
+    <br />
+    <p id="decodedMessage"></p>
+</body>
+</html>

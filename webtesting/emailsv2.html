@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Executive Email Exchange</title>
+    <style>
+        .pyramid {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .pyramid::before,
+        .pyramid::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 50px 50px 0;
+            border-color: #000 transparent;
+        }
+
+        .pyramid::before {
+            bottom: 50%;
+            border-bottom-width: 50px;
+        }
+
+        .pyramid::after {
+            top: 50%;
+            border-top-width: 50px;
+        }
+
+        .pyramid div {
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .pyramid span {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .pyramid i {
+            position: absolute;
+            top: 0;
+            left: 35px;
+            width: 1px;
+            height: 35px;
+            background: #000;
+            transform: rotate(45deg);
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            margin: auto;
+            padding: 20px 10%;
+            max-width: 800px;
+        }
+        
+        .email {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #eee;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .sender {
+            color: #dd4b39;
+        }
+        
+        .timestamp {
+            font-size: 0.8em;
+            color: #777;
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            text-indent: 2em;
+            line-height: 1.6em;
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="pyramid">
+        <div><span></span><i></i></div>
+    </div>
+
+    <!-- Repeat the email div 8 times -->
+    <!-- Just replace the sender, timestamp, and content as needed -->
+    <div class="email">
+        <div class="header">From: evildude1@MSI.org <span class="sender"></span></div>
+        <div class="header">To: evildude2@MSI.org</div>
+        <div class="header">CC: Exec2, Exec3</div>
+        <div class="header">Subject: Urgent: Plutonium Project #553</div>
+        
+        <div class="timestamp">12:01 PM</div>
+        <div class="content">Our third attempt is much simpler. Our signal suppression is proving successful, and the locals are not as capable as before. I think the TS909 will be able to handle whatever is thrown at it. 
+        </div>
+    </div>
+
+    <div class="email">
+        <div class="header">From: evildude2@MSI.org <span class="sender"></span></div>
+        <div class="header">To: evildude1@MSI.org</div>
+        <div class="header">CC: Exec2, Exec3</div>
+        <div class="header">Subject: Urgent: Plutonium Project #553</div>
+        
+        <div class="timestamp">12:33 PM</div>
+        <div class="content">The real question is what do we tell the operator? We can't keep sending them to the glue factory. 
+        </div>
+    </div>
+
+    <div class="email">
+        <div class="header">From: evildude1@MSI.org <span class="sender"></span></div>
+        <div class="header">To: evildude2@MSI.org</div>
+        <div class="header">CC: Exec2, Exec3</div>
+        <div class="header">Subject: Urgent: Plutonium Project #553</div>
+        
+        <div class="timestamp">01:14 PM</div>
+        <div class="content">Already accounted for. We have decided to tell the new operator nothing, and severely limit the TS909's functionality. 
+        </div>
+    </div>
+
+
+    <div class="email">
+        <div class="header">From: evildude2@MSI.org <span class="sender"></span></div>
+        <div class="header">To: evildude1@MSI.org</div>
+        <div class="header">CC: Exec2, Exec3</div>
+        <div class="header">Subject: Urgent: Plutonium Project #553</div>
+        
+        <div class="timestamp">01:40 PM</div>
+        <div class="content">The scanning and translating ability should be heavily distorted, downright broken.
+        </div>
+    </div>
+
+
+    <div class="email">
+        <div class="header">From: evildude1@MSI.org <span class="sender"></span></div>
+        <div class="header">To: evildude2@MSI.org</div>
+        <div class="header">CC: Exec2, Exec3</div>
+        <div class="header">Subject: Urgent: Plutonium Project #553</div>
+        
+        <div class="timestamp">02:07 PM</div>
+        <div class="content">That is an excellent idea. Will forward to fabrication lead.
+        </div>
+    </div>
+
+    <!-- Copy the structure of the email div above for each new email in the thread. -->
+    <!-- Repeat this for a total of 8 emails. -->
+
+</body>
+</html>

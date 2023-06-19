@@ -1,0 +1,22 @@
+#testing torch object
+
+# torch = item('torch')
+# torch.name = 'torch'
+# torch.isholdable = True
+# #add pickup method to torch
+# torch.verbs['pickup'] = pickup
+# torch.verbs['drop'] = drop
+# #print(torch.verbs)
+# #torch pickup printed response
+
+
+# starting_loc = location()   
+# starting_loc.name = 'tutorial'
+# starting_loc.greeting = 'You are surrouended by sand and the air is uncomfortably dry. You feel a bead of sweat dripping down your temple. A mahogany log cabin creaks with age. To the east you see a small castle.'
+
+# small_castle = location()
+# small_castle.greeting = 'You walk over the castle bridge and above the moat, a hungry and very ugly hippo gives you a wink that unsettles your stomach. It is too dark to see much, but there is a small fire next to a torch.'
+
+
+# #adds torch item to small castle locations dictonary
+# small_castle.inventory[torch.name] = torch
