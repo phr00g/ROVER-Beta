@@ -254,7 +254,7 @@ singleverbs = {'inventory':showinventory,'look':look,'test_soil':test_soil,'ener
 
 
 #this should be a dictinoary 'verb':verb/method
-verbs = {'pickup':pickup,'inventory':showinventory,'drop':drop,'loot':loot,'drill':drill,'pull':pull}
+verbs = {'pickup':pickup,'inventory':showinventory,'drop':drop,'loot':loot,'drill':drill,'pull':pull,'test':test_soil}
 
 #add singleverbs to verbs
 verbs.update(singleverbs)

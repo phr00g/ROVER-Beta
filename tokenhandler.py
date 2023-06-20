@@ -35,41 +35,44 @@ def twotoken(command):#command = verb , item
     verb = command[0]
    #currentItem = string of second command token
     currentItem = command[1]
-    
-    
 
-    #if item is in locaiton inventory
-    if currentItem in me.location.inventory:
-
-        itemobject = me.location.inventory[currentItem]
-    
-    #pass item object to verb method if verb method in item's verbs dictionary
-        if verb in itemobject.verbs:
-            itemobject.verbs[verb](itemobject) #aka verb(item)
-        
-        #valid item but invalid verb for item
-        else:
-            print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
-    
-    #if item is in player inventory
-    elif currentItem in me.inventory:
-        itemobject = me.inventory[currentItem]
-
-    #pass item object to verb method if verb method in item's verbs dictionary
-        if verb in itemobject.verbs:
-            itemobject.verbs[verb](itemobject) #aka verb(item)
-        
-        #valid item but invalid verb for item
-        else:
-            print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
-
-
+    if verb == 'test' and currentItem == 'soil':
+        test_soil()
     
     else:
 
+        #if item is in locaiton inventory
+        if currentItem in me.location.inventory:
+
+            itemobject = me.location.inventory[currentItem]
+        
+        #pass item object to verb method if verb method in item's verbs dictionary
+            if verb in itemobject.verbs:
+                itemobject.verbs[verb](itemobject) #aka verb(item)
+            
+            #valid item but invalid verb for item
+            else:
+                print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
+        
+        #if item is in player inventory
+        elif currentItem in me.inventory:
+            itemobject = me.inventory[currentItem]
+
+        #pass item object to verb method if verb method in item's verbs dictionary
+            if verb in itemobject.verbs:
+                itemobject.verbs[verb](itemobject) #aka verb(item)
+            
+            #valid item but invalid verb for item
+            else:
+                print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
 
 
-        print_wrapped_text("There is no {} here! ".format(currentItem))
+        
+        else:
+
+
+
+            print_wrapped_text("There is no {} here! ".format(currentItem))
         
  
     
