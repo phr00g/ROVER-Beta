@@ -236,7 +236,27 @@ def pull(leverobj):
         print_wrapped_text("ROVER:There is nothing here to pull.")
 
 
-
+def help():
+    print_wrapped_text("ROVER:You have the following commands at your disposal: ")
+    print('\n')
+    print('inventory')
+    
+    print('look')
+    
+    print('energy')
+    
+    print('progress')
+    
+    print('go')
+    
+    print('drill')
+    
+    print('test soil')
+    
+    print('pickup')
+    
+    print('help')
+    print('\n')
 
 
 
@@ -248,7 +268,7 @@ def pull(leverobj):
 #verbs are methods, all verbs should be defined above ----------------------------------------------------------------------------------------------
 
 #need single verbs dictionary
-singleverbs = {'inventory':showinventory,'look':look,'test_soil':test_soil,'energy':energy,'progress':minerals}
+singleverbs = {'inventory':showinventory,'look':look,'test_soil':test_soil,'energy':energy,'progress':minerals,'help':help}
 
 
 
