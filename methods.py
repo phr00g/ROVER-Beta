@@ -108,6 +108,7 @@ def test_soil():
                 me.location.hasmineral = False
                 me.location.istestable == False
                 me.location.hasbeentested == True
+                me.location.success = True
                 print("You have tested and found this site suitable for excavation! Good job!")
                 me.location.greeting += "You have tested and found this site suitable for excavation! Good job!"
                 energy()

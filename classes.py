@@ -36,6 +36,8 @@ class location:
         self.hasevent = False
         self.firsttime = True
         self.eventflag = False
+        #turns true when player tests location, and it is suitable for excavation
+        self.success = False
     def update(self):
         pass
 

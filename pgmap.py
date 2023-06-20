@@ -39,6 +39,7 @@ def pygo():
     RED = (251, 54, 64)
     BLUE = (0, 121, 145)
     BLACK = (0, 0, 0)
+    GREEN = (32, 191, 85)
 
     # Create a Pygame window
     window = pygame.display.set_mode((window_width, window_height))
@@ -103,6 +104,8 @@ def pygo():
                         pygame.draw.rect(window, RED, rect)
                     else:
                         pygame.draw.rect(window, BLUE, rect)
+                elif tile.success == True:
+                    pygame.draw.rect(window, GREEN, rect)
                 else:
                     pygame.draw.rect(window, WHITE, rect)
 
