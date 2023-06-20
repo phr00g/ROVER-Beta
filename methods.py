@@ -18,10 +18,10 @@ def open_image(file_name):
 
 def energy():
     if me.energy >= 1:
-        print("ROVER:You have {} energy!".format(me.energy))
+        print_wrapped_text("ROVER:You have {} energy!".format(me.energy))
 
     else:
-        print("ROVER:You are completely out of energy! Explore around and find an energy crystal so you can proceeed with your mission!")
+        print_wrapped_text("ROVER:You are completely out of energy! Explore around and find an energy crystal so you can proceeed with your mission!")
 
 def pickup(item): #item is an object from item class
 
@@ -29,16 +29,16 @@ def pickup(item): #item is an object from item class
         if item.iscrystal == False:
             #add item from location to inventory
             me.inventory[item.name] = me.location.inventory[item.name]
-            print(item.onpickup)
+            print_wrapped_text(item.onpickup)
         else:
             me.energy += 1
-            print("You now have {} energy!".format(me.energy))
+            print_wrapped_text("You now have {} energy!".format(me.energy))
         
         #remove item from location
         me.location.inventory.pop(item.name)
 
     else:
-        print("ROVER: Can't pickup {}".format(item.name))
+        print_wrapped_text("ROVER: Can't pickup {}".format(item.name))
     
     
     
@@ -59,30 +59,30 @@ def drop(item):#arg is item object, drop item leaves player inventory enters cur
         #removes item from player inventory 
         me.inventory.pop(item.name)
 
-        #print dropped message
-        print(item.ondrop)
+        #print_wrapped_text dropped message
+        print_wrapped_text(item.ondrop)
     
     else:
-        print("You can't drop what you dont have :(")
+        print_wrapped_text("You can't drop what you dont have :(")
 
 
 
 def showinventory():
     if len(me.inventory) == 0:
-        print("You have nothing in your inventory! ")
+        print_wrapped_text("You have nothing in your inventory! ")
     else:
         for key in me.inventory:
-            print(key)
+            print_wrapped_text(key)
 
 
 
-#look method just reprints current location greeting:
+#look method just reprint_wrapped_texts current location greeting:
 
 def look():
-    print(me.location.greeting)
+    print_wrapped_text(me.location.greeting)
 
     for values in me.location.inventory.values():
-        print(values.greeting)
+        print_wrapped_text(values.greeting)
 
 def nullverb(): #this method is for verbs we want to recognize as reasonable but can not be done, 
                 #for the sake of adding verb to verbs dictinoary:  'nullverb' : nullverb
@@ -96,7 +96,7 @@ def test_soil():
     if me.energy >= 1:
 
         if 'alien' in me.location.inventory and me.location.inventory['alien'].isalive == True:
-            print("ROVER: You can not test the soil while there is a living being here!")
+            print_wrapped_text("ROVER: You can not test the soil while there is a living being here!")
 
         elif me.location.istestable == True and me.location.hasbeentested == False:
             
@@ -109,7 +109,7 @@ def test_soil():
                 me.location.istestable == False
                 me.location.hasbeentested == True
                 me.location.success = True
-                print("You have tested and found this site suitable for excavation! Good job!")
+                print_wrapped_text("You have tested and found this site suitable for excavation! Good job!")
                 me.location.greeting += "You have tested and found this site suitable for excavation! Good job!"
                 energy()
 
@@ -118,30 +118,30 @@ def test_soil():
                 if me.minerals == 6:
                     #have the win condition and other stuff happen
 
-                    print("Good job! Return to the landing dock for extraction and to complete your mission!")
+                    print_wrapped_text("Good job! Return to the landing dock for extraction and to complete your mission!")
                     me.wincondition  = True
                     pass
 
 
             else:
-                print("ROVER:You have tested this site, and it site is not suitable for excavation.")
-                print("ROVER:You now have {} energy".format(me.energy))
+                print_wrapped_text("ROVER:You have tested this site, and it site is not suitable for excavation.")
+                print_wrapped_text("ROVER:You now have {} energy".format(me.energy))
                 me.location.greeting += "This site is not suitable for excavation."
             
             me.location.hasbeentested = True
 
         elif me.location.hasbeentested == True:
-            print("ROVER: You can not test this site, as it has already been tested")
+            print_wrapped_text("ROVER: You can not test this site, as it has already been tested")
 
         else:
-            print('ROVER: You can not test this site')
+            print_wrapped_text('ROVER: You can not test this site')
 
 
     else:
-        print("You have no energy to drill!")
+        print_wrapped_text("You have no energy to drill!")
 
 def minerals():
-    print("ROVER: So far we have found {} sites that are suitable for excavation.".format(me.minerals))
+    print_wrapped_text("ROVER: So far we have found {} sites that are suitable for excavation.".format(me.minerals))
 
 
 
@@ -149,24 +149,24 @@ def minerals():
 #we wh
 def loot(deadguy):
     if deadguy.isalive == False and len(deadguy.inventory ) != 0:
-        print("ROVER:After searching through the soma of the {} we found:".format(deadguy.name))
+        print_wrapped_text("ROVER:After searching through the soma of the {} we found:".format(deadguy.name))
         
         for key, val in deadguy.inventory.items():
             if val.iscrystal == True:
                 me.energy += 1
                 
-                print("An energy crystal!")
+                print_wrapped_text("An energy crystal!")
 
             else:
                 me.inventory[key] = val
                 
-                print("A {}".format(key))
+                print_wrapped_text("A {}".format(key))
 
         deadguy.verbs.pop('loot')
         deadguy.inventory = {}
 
     else:
-        print("ROVER:There is nothing in the soma of the {}".format(deadguy.name))
+        print_wrapped_text("ROVER:There is nothing in the soma of the {}".format(deadguy.name))
 
 
 
@@ -183,16 +183,16 @@ def give(gift):
                 me.location.inventory['alien'].giftable = False
 
             elif 'alien' in me.location.inventory and me.location.inventory['alien'].isalive == True and me.location.inventory['alien'].giftable == False:
-                print("ROVER:The alien will not accept the {}.".format(gift.name))
+                print_wrapped_text("ROVER:The alien will not accept the {}.".format(gift.name))
             
             else:
-                print("ROVER:There is no individual here to give the {} to.".format(gift.name))
+                print_wrapped_text("ROVER:There is no individual here to give the {} to.".format(gift.name))
 
         else:
-            print("ROVER:This doesn't seem like the type of thing to give to another individual.")
+            print_wrapped_text("ROVER:This doesn't seem like the type of thing to give to another individual.")
 
     else:
-        print("ROVER:To give something it must be in our possesion.")
+        print_wrapped_text("ROVER:To give something it must be in our possesion.")
         
     #alien shoudl eave after getting gift
 
@@ -203,9 +203,9 @@ def drill(itemperson):
     #if the thing is a person
     if itemperson.isalive == True:
         if itemperson.deathscream != "":
-            print("ROVER:Right before I performed a drill operation on the {}, it tried to say something:".format(itemperson.name))
-            print(itemperson.deathscream)
-        print("ROVER:The {} is no more".format(itemperson.name))
+            print_wrapped_text("ROVER:Right before I performed a drill operation on the {}, it tried to say something:".format(itemperson.name))
+            print_wrapped_text(itemperson.deathscream)
+        print_wrapped_text("ROVER:The {} is no more".format(itemperson.name))
         itemperson.isalive =False
         itemperson.verbs.pop('drill')
         itemperson.verbs['loot'] = loot
@@ -232,7 +232,7 @@ def pull(leverobj):
         leverobj.verbs.pop('use')
 
     else:
-        print("ROVER:There is nothing here to pull.")
+        print_wrapped_text("ROVER:There is nothing here to pull.")
 
 
 

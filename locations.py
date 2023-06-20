@@ -210,14 +210,14 @@ def fishcave_event():
         message = 'again and again you come your puny devices infect use and pollute our ether when will you ever be satisfied'
         message = encode(message)
 
-        yn = input('''ROVER: There appears to be an alien lifeform in this cave. I have taken a low resolution scan. Would you like me to print it on your device? y/n''')
+        yn = input('''ROVER: There appears to be an alien lifeform in this cave. I have taken a low resolution scan. Would you like me to print_wrapped_text it on your device? y/n''')
         
         if yn == 'y':
-            print("\nExporting scan ....")
+            print_wrapped_text("\nExporting scan ....")
             open_image('roger.png')
 
-        print("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
-        print("ROVER: Okay, here is a rough translation: {}".format(message))
+        print_wrapped_text("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
+        print_wrapped_text("ROVER: Okay, here is a rough translation: {}".format(message))
 
     else:
         fishcave.eventflag = False
@@ -256,12 +256,12 @@ obelisk1 = map_array[4][1]
 obelisk1.eventflag = True
 
 def obelisk1event():
-    print("ROVER: There is a very large obelisk made from an array of local.....")
-    print("Signal disrupted please wait....")
+    print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
+    print_wrapped_text("Signal disrupted please wait....")
     opened = webbrowser.open('https://newemailssadfsdfsh.s3.us-west-2.amazonaws.com/index.html')
-    print("....materials and sediments. It is crude and unsightly. ")
+    print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
-    print('''ROVER:To the south appers to be the mouth of some sort of cave, I do not see anything of note to the west, to the east is a
+    print_wrapped_text('''ROVER:To the south appers to be the mouth of some sort of cave, I do not see anything of note to the west, to the east is a
     steep descent to a very vast tar pit that we will not be able to reach. To the north is some sort of very high and large smoke spiral.
     I think your people call them 'vortexes'. ''')
 
@@ -284,15 +284,15 @@ def craterlipsouthevent():
         message = 'you do not have to do what all of your associates have done, you can save us. If you can ever find a way to listen to us you will find we can work together. better yet destroy those signal towers and leave us alone'
         message = encode(message)
 
-        yn = input('''ROVER: There appears to be an alien lifeform . I have taken a low resolution scan. Would you like me to print it on your device? y/n''')
+        yn = input('''ROVER: There appears to be an alien lifeform . I have taken a low resolution scan. Would you like me to print_wrapped_text it on your device? y/n''')
         
         if yn == 'y':
-            print("\nExporting scan ....")
+            print_wrapped_text("\nExporting scan ....")
             #we change this when we make michael's photo
             open_image('michael.jpg')
 
-        print("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
-        print("ROVER: Okay, here is a rough translation: {}".format(message))
+        print_wrapped_text("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
+        print_wrapped_text("ROVER: Okay, here is a rough translation: {}".format(message))
 
     else:
         craterlipsouth.eventflag = False
@@ -327,7 +327,7 @@ forestentrance.greeting = '''ROVER:This is the mouth of a large forest of trees.
     the salt flat. To the north there is nothing of interest. To the east is deeper, more dense forest.'''
 
 def entranceupdate():
-    print("ROVER: After drilling the very large tree it fell, and a star shaped trinket fell on the floor. It appeears to be some sort of relic.")
+    print_wrapped_text("ROVER: After drilling the very large tree it fell, and a star shaped trinket fell on the floor. It appeears to be some sort of relic.")
     forestentrance.inventory['star'] = star
 
 forestentrance.update = entranceupdate
@@ -364,15 +364,15 @@ def darkmouthevent():
         message = 'you should not be here, the cave has a ravine and a bridge you can use to cross it, in the furthest depths there is one of your cursed signal towers, please destroy it and save us all '
         message = encode(message)
 
-        yn = input('''ROVER: There appears to be an alien lifeform . I have taken a low resolution scan. Would you like me to print it on your device? y/n''')
+        yn = input('''ROVER: There appears to be an alien lifeform . I have taken a low resolution scan. Would you like me to print_wrapped_text it on your device? y/n''')
         
         if yn == 'y':
-            print("\nExporting scan ....")
+            print_wrapped_text("\nExporting scan ....")
             #we change this when we make michael's photo
             open_image('jeremy.jpg')
 
-        print("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
-        print("ROVER: Okay, here is a rough translation: {}".format(message))
+        print_wrapped_text("ROVER: It appears that it is attempting to use some crude for of communication. I will observe and translate.")
+        print_wrapped_text("ROVER: Okay, here is a rough translation: {}".format(message))
 
     else:
         darkmouth.eventflag = False
@@ -418,7 +418,7 @@ def darkcavelevel2event():
 darkcavelevel2.event = darkcavelevel2event
 
 def level2update():
-    print("ROVER: A hidden bridge extended from underneath us and bridged the ravine. We can now go further east! ")
+    print_wrapped_text("ROVER: A hidden bridge extended from underneath us and bridged the ravine. We can now go further east! ")
     map_array[6][8].east = map_array[7][8]
     map_array[7][8].west = map_array[6][8]
     
@@ -435,12 +435,12 @@ obelisk2 = map_array[0][6]
 obelisk2.eventflag = True
 
 def obelisk2event():
-    print("ROVER: There is a very large obelisk made from an array of local.....")
-    print("Signal disrupted please wait....")
+    print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
+    print_wrapped_text("Signal disrupted please wait....")
     opened = webbrowser.open('https://speclist.s3.us-west-2.amazonaws.com/index.html')
-    print("....materials and sediments. It is crude and unsightly. ")
+    print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
-    print('''ROVER:To the south appers to be an expanes of very flat concrete, to the west is an endless abyss that I can not travel across, to the east is a
+    print_wrapped_text('''ROVER:To the south appers to be an expanes of very flat concrete, to the west is an endless abyss that I can not travel across, to the east is a
     volcanic formation that is leading to the crest of a volcano. To the north is another ascent to the top of the volcano. 
     . ''')
 
@@ -456,13 +456,13 @@ DEMOSITE = map_array[7][4]
 DEMOSITE.eventflag = True
 
 def DEMOSITEEVENT():
-    print("ROVER: There is a very large obelisk made from an array of local.....")
-    print("Signal disrupted please wait....")
+    print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
+    print_wrapped_text("Signal disrupted please wait....")
     #opened = webbrowser.open('https://speclist.s3.us-west-2.amazonaws.com/index.html')
     opened = webbrowser.open('index.html')
-    print("....materials and sediments. It is crude and unsightly. ")
+    print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
-    print('''ROVER: We are at the center of some sort of temple. The northern and western quaters lay accordingly. The temple continues south but has some fog. 
+    print_wrapped_text('''ROVER: We are at the center of some sort of temple. The northern and western quaters lay accordingly. The temple continues south but has some fog. 
     . ''')
 
 DEMOSITE.event = DEMOSITEEVENT

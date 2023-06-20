@@ -1,5 +1,6 @@
 #classes for player, and locations (locations should be nodes with 4 edges: north, south, east and west)
 import os
+import textwrap
 
 class person:
     def __init__(self):
@@ -87,8 +88,18 @@ class NPC(person):
         pass
         
 
+def print_wrapped_text(text):
+    wrapped_text = textwrap.wrap(text, width=100)  # Set the desired width for wrapping
+    for line in wrapped_text:
+        print(line)
 
-        
+
+
+
+
+
+
+
 
 
 

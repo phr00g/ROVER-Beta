@@ -10,6 +10,7 @@ import threading
 from pgmap import *
 from methods import *
 from NPCs import *
+import sys
 
 
        
@@ -19,21 +20,21 @@ from NPCs import *
 
 #intro sequence
 idnumber = str(random.randint(1000,9999))
-print('\n')
-print("Greetings on behalf of Material Solutions Incorporated (MSI), Associate Remote ROVER Engineer #{}!  ".format(idnumber))
-print("It seems that this is your first time uplinking to a ROVER! ")
-print('\n')
-print("As you know, Associated Remote ROVER Engineer #{}, MSI's TS909 ROVER is a simple little soil testing and drilling rig. We wish you could see how cute it is!".format(idnumber))
-print("MSI is looking for available and ethically reachable deposits of Neutronium , which is why your ROVER is currently located on the conveniently nearby terrestrial planet of REDACTED.")
-print("Excitingly you are part of the first probe that we have sent to this planet! Our satellite scan shows that there is no significant intelligent life on this planet. In the extremely unlikelty event that you do encounter some low level lifeform, please do not acknowledge it and carry on with your mission. ")
-print("Please locate and test (six) suitable excavation sites, and return your ROVER safely back to its landing dock. ")
-print("And, don't worry, your ROVER is currently at the landing dock. \n")
-print("You you already well know your ROVER is an extremely simple device. There are only a few things you can do:")
-print("Type in 'test_soil' to test your location and determine if it is a suitable excavation site.  Type in 'drill' followed by an object to drill into it.")
-print("test_soil and drill both will cost you one point of energy. You start with 3 energy, and you can get more by using: 'pickup' to gather energy crystal.")
-print("Lastly you can check your energy level by typing in 'energy', you can see how many suitable excavation sites you have found by typing in 'progress', and you can see what is in your inventory by typing in 'inventory'. ")
-print("This is the full extent of your ROVER's capabilites. Typing in nonexistent or unauthorized commands will risk breaking your ROVER.")
-print("We know you will be successful!\n")
+print_wrapped_text('\n')
+print_wrapped_text("Greetings on behalf of Material Solutions Incorporated (MSI), Associate Remote ROVER Engineer #{}!  ".format(idnumber))
+print_wrapped_text("It seems that this is your first time uplinking to a ROVER! ")
+print_wrapped_text('\n')
+print_wrapped_text("As you know, Associated Remote ROVER Engineer #{}, MSI's TS909 ROVER is a simple little soil testing and drilling rig. We wish you could see how cute it is!".format(idnumber))
+print_wrapped_text("MSI is looking for available and ethically reachable deposits of Neutronium , which is why your ROVER is currently located on the conveniently nearby terrestrial planet of REDACTED.")
+print_wrapped_text("Excitingly you are part of the first probe that we have sent to this planet! Our satellite scan shows that there is no significant intelligent life on this planet. In the extremely unlikelty event that you do encounter some low level lifeform, please do not acknowledge it and carry on with your mission. ")
+print_wrapped_text("Please locate and test (six) suitable excavation sites, and return your ROVER safely back to its landing dock. ")
+print_wrapped_text("And, don't worry, your ROVER is currently at the landing dock. \n")
+print_wrapped_text("You you already well know your ROVER is an extremely simple device. There are only a few things you can do:")
+print_wrapped_text("Type in 'test_soil' to test your location and determine if it is a suitable excavation site.  Type in 'drill' followed by an object to drill into it.")
+print_wrapped_text("test_soil and drill both will cost you one point of energy. You start with 3 energy, and you can get more by using: 'pickup' to gather energy crystal.")
+print_wrapped_text("Lastly you can check your energy level by typing in 'energy', you can see how many suitable excavation sites you have found by typing in 'progress', and you can see what is in your inventory by typing in 'inventory'. ")
+print_wrapped_text("This is the full extent of your ROVER's capabilites. Typing in nonexistent or unauthorized commands will risk breaking your ROVER.")
+print_wrapped_text("We know you will be successful!\n")
 
 
 #game loop, DECLARE PLAYER STARTING LOCATION BEFORE ENTERING GAMELOOP
@@ -57,7 +58,7 @@ while gamegoing:
     
     #for when player returns to landingdock: a3, and has win condition -----> end game
     if me.location == landing and me.wincondition == True:
-        print("Congratualtions Associated Remote ROVER Engineer #{}, your missions was a success! You will now be disconnected from your ROVER. Please sign back on tomorrow at 7:00 am for your next assignment. ".format(idnumber))
+        print_wrapped_text("Congratualtions Associated Remote ROVER Engineer #{}, your missions was a success! You will now be disconnected from your ROVER. Please sign back on tomorrow at 7:00 am for your next assignment. ".format(idnumber))
         quit()
 
 #####################################TEST CONDITION AREA REMEMBER TO REMOVE AFTER USE##############################
@@ -83,7 +84,7 @@ while gamegoing:
 
     #show greeting for specific location that just entered
     
-    #if there are items in location, print their greeting so we dont forget their existence -- add this to look 
+    #if there are items in location, print_wrapped_text their greeting so we dont forget their existence -- add this to look 
     look()
     
     #now that we have visitied with location, its firstime attribtue is false and must stay that way
@@ -99,13 +100,14 @@ while gamegoing:
         #consider refresh / command tick method
         
         command = input("\nEXECUTE COMMAND:").lower()
-        print('\n')
+        print_wrapped_text('\n')
         command = command.split()
         if len(command) == 0:
             continue
         verb = command[0]
 
-               
+        if verb == 'quit':
+            quit()
 
 
         #handles location changing and failure to do so   special case for walking 
@@ -113,15 +115,15 @@ while gamegoing:
 
             #if they only say go or walk
             if len(command) == 1:
-                print("Where do you want to {} ?".format(verb))
+                print_wrapped_text("Where do you want to {} ?".format(verb))
                 continue
 
             # me.location.west == None
             if command[1] not in loc_dict  or loc_dict[command[1]] == None :
-                print("You can not go {} \n".format(command[1]))
+                print_wrapped_text("You can not go {} \n".format(command[1]))
                 
                 if command[1] in me.location.whynot:
-                    print(me.location.whynot[command[1]])
+                    print_wrapped_text(me.location.whynot[command[1]])
 
                 continue
 
@@ -140,7 +142,7 @@ while gamegoing:
             
             pass
         else:
-            print("ROVER:I can only understand commands that start with a verb.")
+            print_wrapped_text("ROVER:I can only understand commands that start with a verb.")
             continue
         
 
@@ -152,8 +154,8 @@ while gamegoing:
 
         
 
-        #print empty line5
-        print("\n")
+        #print_wrapped_text empty line5
+        print_wrapped_text("\n")
 
 
 

@@ -23,7 +23,7 @@ def onetoken(command): #command = verb
     if verb in singleverbs:
         verbs[verb]()
     else:
-        print("ROVER:That is not enough information!")
+        print_wrapped_text("ROVER:That is not enough information!")
         pass
 
 #two token command handler
@@ -49,7 +49,7 @@ def twotoken(command):#command = verb , item
         
         #valid item but invalid verb for item
         else:
-            print('Cannot {} {}'.format(verb,currentItem))
+            print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
     
     #if item is in player inventory
     elif currentItem in me.inventory:
@@ -61,7 +61,7 @@ def twotoken(command):#command = verb , item
         
         #valid item but invalid verb for item
         else:
-            print('Cannot {} {}'.format(verb,currentItem))
+            print_wrapped_text('Cannot {} {}'.format(verb,currentItem))
 
 
     
@@ -69,7 +69,7 @@ def twotoken(command):#command = verb , item
 
 
 
-        print("There is no {} here! ".format(currentItem))
+        print_wrapped_text("There is no {} here! ".format(currentItem))
         
  
     
@@ -93,6 +93,6 @@ def tokenhandler(command):
         #add walking / go condition
         twotoken(command)
     elif length ==3:
-        print("I dont understand")
+        print_wrapped_text("I dont understand")
     elif length == 4:
         fourtoken(command)
