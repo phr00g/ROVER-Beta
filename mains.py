@@ -15,7 +15,7 @@ from NPCs import *
        
 
 
-# #game start
+# #game start555%55%
 
 #intro sequence
 idnumber = str(random.randint(1000,9999))

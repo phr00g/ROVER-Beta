@@ -15,17 +15,30 @@ def pygo():
     pygame.init()
     clock = pygame.time.Clock()
 
+    letters = ['a', 'b', 'c', 'd', 'e', 'f','g','h','i']
+    # Define the numbers to display
+    numbers = list(range(1, 9))
+
+
+    # Font settings
+    font_size = 24
+    vertical_gap = 36
+    horizontal_gap = 36
+    pygame.font.init()
+    font = pygame.font.SysFont(None, font_size)
+
+
     # Set the dimensions of the window
-    window_width = 475
-    window_height = 535
+    window_width = 550
+    window_height = 600
     tile_size = 50
     space_size = 10
 
     # Define colors
-    WHITE = (247, 255, 247)
-    RED = (255, 107, 107)
-    BLUE = (78, 205, 196)
-    BLACK = (102, 78, 76)
+    WHITE = (204, 201, 220)
+    RED = (251, 54, 64)
+    BLUE = (0, 121, 145)
+    BLACK = (0, 0, 0)
 
     # Create a Pygame window
     window = pygame.display.set_mode((window_width, window_height))
@@ -42,10 +55,47 @@ def pygo():
             if event.type == pygame.QUIT:
                 running = False
 
+
+            total_height = (len(letters) * font.get_height()) + ((len(letters) - 1) * vertical_gap)
+            # Calculate the total width of the numbers row
+            total_width = (len(numbers) * font_size) + ((len(numbers) - 1) * horizontal_gap)
+
+            start_y = (window_height - total_height) // 2 - 10
+            start_x = (window_width - total_width) // 2 + 15
+
+            # Render and display the letters
+            for idx, letter in enumerate(letters):
+                text = font.render(letter, True, pygame.Color(WHITE))
+                #first arg is x loc of column of letters
+                text_rect = text.get_rect(center=(window_width // 15, start_y + (idx * (font_size + vertical_gap))))
+                window.blit(text, text_rect)
+
+
+            #render and display numbers
+            for idx, number in enumerate(numbers):
+                text = font.render(str(number), True, pygame.Color(WHITE))
+                text_rect = text.get_rect(topleft=(start_x + (idx * (font_size + horizontal_gap)), window_height // 22))
+                window.blit(text, text_rect)
+
+
+
+
+
+            
+
+            
+
+
+
+
+        
+        #for xi in length of row in map array
         for x in range(len(map_array)):
+            #for y in length of col in map array
             for y in range(len(map_array[0])):
                 tile = map_array[x][y]
-                rect = pygame.Rect(x * (tile_size + space_size), y * (tile_size + space_size), tile_size, tile_size)
+                #add to first arg to move entire grid to right and second to move entire grid left?
+                rect = pygame.Rect(x * (tile_size + space_size) + 50, y * (tile_size + space_size) + 50, tile_size, tile_size)
 
                 if tile == me.location:
                     current_time = time.time()
