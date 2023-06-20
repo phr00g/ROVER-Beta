@@ -29,6 +29,7 @@ def pickup(item): #item is an object from item class
         if item.iscrystal == False:
             #add item from location to inventory
             me.inventory[item.name] = me.location.inventory[item.name]
+            print('\n')
             print_wrapped_text(item.onpickup)
         else:
             me.energy += 1

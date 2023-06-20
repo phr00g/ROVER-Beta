@@ -14,7 +14,7 @@ import sys
 
 
        
-
+ 
 
 # #game start555%55%
 
@@ -25,7 +25,7 @@ print_wrapped_text("Greetings on behalf of Material Solutions Incorporated (MSI)
 print_wrapped_text("It seems that this is your first time uplinking to a ROVER! ")
 print_wrapped_text('\n')
 print_wrapped_text("As you know, Associated Remote ROVER Engineer #{}, MSI's TS909 ROVER is a simple little soil testing and drilling rig. We wish you could see how cute it is!".format(idnumber))
-print_wrapped_text("MSI is looking for available and ethically reachable deposits of Neutronium , which is why your ROVER is currently located on the conveniently nearby terrestrial planet of REDACTED.")
+print_wrapped_text("MSI is looking for available and ethically reachable deposits of Neutronium , which is why your ROVER is currently located on the conveniently nearby terrestrial planet of REDACTED.\n")
 print_wrapped_text("Excitingly you are part of the first probe that we have sent to this planet! Our satellite scan shows that there is no significant intelligent life on this planet. In the extremely unlikelty event that you do encounter some low level lifeform, please do not acknowledge it and carry on with your mission. ")
 print_wrapped_text("Please locate and test (six) suitable excavation sites, and return your ROVER safely back to its landing dock. ")
 print_wrapped_text("And, don't worry, your ROVER is currently at the landing dock. \n")

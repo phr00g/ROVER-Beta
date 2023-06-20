@@ -40,6 +40,7 @@ def pygo():
     BLUE = (0, 121, 145)
     BLACK = (0, 0, 0)
     GREEN = (32, 191, 85)
+    ORANGE = (255, 165, 0)
 
     # Create a Pygame window
     window = pygame.display.set_mode((window_width, window_height))
@@ -79,16 +80,6 @@ def pygo():
                 window.blit(text, text_rect)
 
 
-
-
-
-            
-
-            
-
-
-
-
         
         #for xi in length of row in map array
         for x in range(len(map_array)):
@@ -106,6 +97,9 @@ def pygo():
                         pygame.draw.rect(window, BLUE, rect)
                 elif tile.success == True:
                     pygame.draw.rect(window, GREEN, rect)
+                elif tile == landing:
+                    pygame.draw.rect(window,ORANGE,rect)
+
                 else:
                     pygame.draw.rect(window, WHITE, rect)
 
