@@ -89,7 +89,7 @@ class NPC(person):
         
 
 def print_wrapped_text(text):
-    wrapped_text = textwrap.wrap(text, width=100)  # Set the desired width for wrapping
+    wrapped_text = textwrap.wrap(text, width=84)  # Set the desired width for wrapping
     for line in wrapped_text:
         print(line)
 
