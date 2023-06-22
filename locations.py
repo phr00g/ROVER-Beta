@@ -567,6 +567,18 @@ volcglass.greeting = '''ROVER: There is useless volcanic glass everywhere. To th
 a volcano. To the west is endless abyss.'''
 ############################
 
+#####volcano west###########
+volcwest = map_array[0][3]
+volcwest.greeting = '''ROVER:We are on a slope leading to the crest of a volcano to the east. It is 
+too steep to go futher. To the north is flatland with volcanic glass. To the south is a hotspring. To 
+the west is endless abyss.'''
+#################
+########hotspring west###########
+springwest = map_array[0][4]
+springwest.greeting = '''ROVER: We are in a hotspring. Not very interesting.
+Just as well, there is nothing of note to the north, east, or south. '''
+###############
+
 
 
 
