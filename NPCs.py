@@ -25,5 +25,10 @@ jeremy = NPC('alien')
 jeremy.verbs['loot'] = loot
 jeremy.verbs['drill'] = drill
 
+###rusted rover in swamp
+rover2 = NPC('ROVER')
+rover2.isalive = False
+rover2.verbs['loot'] = loot
+rover2.inventory['crystal'] = crystal2
 
 

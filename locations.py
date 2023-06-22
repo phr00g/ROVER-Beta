@@ -6,7 +6,7 @@ import os
 from lang import encode,decode
 from NPCs import *
 import webbrowser
-
+import time
 
 #just to appease false positive problem form ide
 from NPCs import roger,michael
@@ -258,7 +258,12 @@ obelisk1.eventflag = True
 def obelisk1event():
     print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
     print_wrapped_text("Signal disrupted please wait....")
-    opened = webbrowser.open('https://newemailssadfsdfsh.s3.us-west-2.amazonaws.com/index.html')
+    for i in range(6):
+        print('.',end='')
+        time.sleep(0.5)
+    yn = input("ROVER: Should I open intercepted link? y/n")
+    if yn == 'y':
+        opened = webbrowser.open('https://newemailssadfsdfsh.s3.us-west-2.amazonaws.com/index.html')
     print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
     print_wrapped_text('''ROVER:To the south appers to be the mouth of some sort of cave, I do not see anything of note to the west, to the east is a
@@ -437,7 +442,13 @@ obelisk2.eventflag = True
 def obelisk2event():
     print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
     print_wrapped_text("Signal disrupted please wait....")
-    opened = webbrowser.open('https://speclist.s3.us-west-2.amazonaws.com/index.html')
+    for i in range(6):
+        print('.',end='')
+        time.sleep(0.5)
+    yn = input("ROVER: Should I open intercepted link? y/n")
+    if yn == 'y':
+
+        opened = webbrowser.open('https://speclist.s3.us-west-2.amazonaws.com/index.html')
     print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
     print_wrapped_text('''ROVER:To the south appers to be an expanes of very flat concrete, to the west is an endless abyss that I can not travel across, to the east is a
@@ -458,14 +469,110 @@ DEMOSITE.eventflag = True
 def DEMOSITEEVENT():
     print_wrapped_text("ROVER: There is a very large obelisk made from an array of local.....")
     print_wrapped_text("Signal disrupted please wait....")
+    for i in range(6):
+        print('.',end='')
+        time.sleep(0.5)
+    
+    yn = input("ROVER: Should I open intercepted link? y/n")
+    if yn == 'y':
     #opened = webbrowser.open('https://speclist.s3.us-west-2.amazonaws.com/index.html')
-    opened = webbrowser.open('index.html')
+        opened = webbrowser.open('index.html')
     print_wrapped_text("....materials and sediments. It is crude and unsightly. ")
     #add rest of greeting here just cause
     print_wrapped_text('''ROVER: We are at the center of some sort of temple. The northern and western quaters lay accordingly. The temple continues south but has some fog. 
     . ''')
 
 DEMOSITE.event = DEMOSITEEVENT
+
+############## cave mouth north###########
+cavenorth =map_array[4][2]
+
+cavenorth.greeting = '''ROVER: We at the northern mouth of the cave. There is not much here.
+To the east is a descent towards a massive tar pit that I can not approach. 
+To the west there appears to be a massive floating slab. To the south is the heart of the cave. 
+To the north there seems to be some sort of large monument made from local materials.'''
+
+############3 cave mouth east##############
+caveeast = map_array[5][3]
+
+caveeast.greeting = '''ROVER: We are at the eastern mouth of the cave. There is simply nothing here. To the north is a descent
+towards a massive tar pit that I can not approach. To the east is nothing. To the south is a river valley, the liquid is very shiny.
+To the west is the heart of the cave.'''
+
+###########large hill east of landing##############
+largehill = map_array[4][4]
+
+largehill.greeting = '''ROVER: We are atop a rather large hill! To the west is our landing dock. To the 
+east is a river valley flowing with a strange and shiny liquid. To the north is the heart of an underground cave. To the south is the eastern lip of a crater. '''
+
+###############liquid river valley####################
+
+liquidvalley = map_array[5][4]
+liquidvalley.greeting = '''ROVER: We are inside a river valley, there is a stream of metallic liquid running through it. To the south is nothing. To the north is the eastern mouth of the cave.
+To the east seems to be he beginning of some sort of temple. To the west is is a large hill.'''
+
+#####temple west#########
+templewest = map_array[6][4]
+
+templewest.greeting = '''ROVER: We are in the western wing of some sort of temple. To the east is the center of the temple. To the north is nothing. To the west is a river valley. There is an endless abyss to the south. '''
+######################
+
+
+#############vortex#########
+vortex = map_array[4][0]
+vortex.greeting = '''ROVER: We are at the center of some sort of vortex. To the south is a monument. To the east 
+there is flatland covered in tar. To the west there is marshland filled with a very bright blue liquid. To the north is endless abyss. '''
+
+############tarpit nw############
+tarpitnw = map_array[5][0]
+tarpitnw.greeting = '''ROVER:We are nearby the large tarpits to the south. There are small pools of tar around here, we should leave. To the east is more
+ of the same. To the west is the vortex. '''
+ ###################
+ ########oxygen swamp###########
+
+swamp = map_array[3][0]
+swamp.inventory['rover'] = rover2
+swamp.greeting = '''ROVER: We are in some swampland, the pervading liquid appears to be made 
+of oxygen. There is a broken, rusted ROVER within reach. To the south there is nothing. To the north is and endless abyss. 
+To the east is some sortof hurricane or vortex. To the west 
+appears to be some kind of burial site. '''
+
+######graveyard west of swamp#####
+
+graveyard = map_array[2][0]
+
+graveyard.greeting = '''ROVER: This appears to be a graveyard for these unsophisticated creatures.
+ To the east is a bright blue swamp. To the south is a clearing. To the west is more of the graveyard.
+  To the north is endless abyss.'''
+
+#####graveyard west############
+gravewest = map_array[2][0]
+gravewest.greeting = '''ROVER:This is a graveyard, nothign interesting here. 
+To the west is a concrete platform. To the south and east is more graveyard. To the north is an endless abysss. '''
+
+#######graveyard south############
+gravesouth = map_array[1][1]
+gravesouth.greeting = '''ROVER:This is a graveyard. To the east and west there is nothingof interest. To the south 
+there appears to be an ascent towards the crest of a volcano.'''
+
+#############n volcano######
+northvolcano = map_array[1][2]
+northvolcano.greeting = '''ROVER:We are on a slope ascending towards the crest of a volcano to the south. It is too steep to climb further. 
+To the east there is nothing of interest. To the west there seems to be flatland with volcanic glass. To the north is a graveyard.  '''
+
+#########################
+######volcanic glass########
+volcglass = map_array[0][2]
+volcglass.greeting = '''ROVER: There is useless volcanic glass everywhere. To the east and south are ascents towards the crest of 
+a volcano. To the west is endless abyss.'''
+############################
+
+
+
+
+
+
+
 
 
 
@@ -498,7 +605,7 @@ for row in map_array:
         if loc.greeting == '' and loc.eventflag == False:
             loc.greeting = "There is nothing to see here."
         if loc.hasmineral == False:
-            loc.greeting += ("\nThis site is not suitable for excavation.\n")
+            loc.greeting += ("\nNEGATIVE: This site is not suitable for excavation.\n")
 
 
 
