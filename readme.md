@@ -2,7 +2,7 @@
 ROVER is a text-adventure game where you operate a remote controller rover bot on a remote planet. You are on a mission to find suitable drilling sites for an interplanetary materials harvesting company. 
 
 
-ROVER requires <a href= 'https://www.python.org/downloads/' >Python 3.1</a> , Pygame, and <a href= 'https://git-scm.com/downloads' >git</a>. It currently only runs on Windows. 
+ROVER requires <a href= 'https://www.python.org/downloads/' >Python 3.10</a> , Pygame, and <a href= 'https://git-scm.com/downloads' >git</a>. It currently only runs on Windows. 
 ## To download and play ROVER
 1. Install Python3.10
 2. Install git
